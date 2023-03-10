@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/plugins/Semantic-UI-CSS-master/semantic.min.css">
+    <link rel="stylesheet" href="/styles/StyleSheet1.css">
+    <script src="/plugins/Semantic-UI-CSS-master/semantic.min.js"></script>
+    <script src="/plugins/Semantic-UI-CSS-master/components/"></script>
+    <script src="/plugins/Semantic-UI-CSS-master/package.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title></title>
+    <style>
+        html,
+        body {
+            height: 98%;
+            margin: 0 auto;
+        }
+
+        .ui three column grid, .column, .ui three column grid .cloumn .segment {
+            height: 100%;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        .citem {
+            height: 70%;
+        }
+
+        .cprice {
+            height: 30%;
+        }
+
+        .item {
+            font-size: 1.5em;
+        }
+
+        @media only screen and (max-width:500px) {
+            /* For mobile phones: */
+            .item {
+                font-size: 1em;
+            }
+        }
+    </style>
+    <script>
+        $(function () {
+
+            $(window).bind("resize", function () {
+                console.log($(this).width())
+                if ($(this).width() < 800) {
+                    $('#my_grid').removeClass('ui three column grid');
+                } else {
+                    $('#my_grid').removeClass('ui one column grid');
+                    document.getElementById("my_grid").className = "ui three column grid";
+                }
+            }).trigger('resize');
+        })
+    </script>
+</head>
+<body>
+    <div id="product_content">
+        <div class="ui three column grid" id="my_grid">
+            <div class="column">
+                <h3 class="ui top inverted attached header">
+                    Basic Package
+                </h3>
+                <div class="ui attached segment citem">
+                    <div class="ui bulleted list">
+                        <div class="item">Access to Basic lounges</div>
+                        <div class="item">Up to $10 of consumable coffee purchses</div>
+                        <div class="item">5% discount on all coffee purchases</div>
+                        <div class="item">10% discount on all merchandises</div>
+                    </div>
+                </div>
+                <div class="cprice">
+                    <div class="cprice_content">
+                        <h3 class="ui top attached header">
+                            $19
+                            <div class="sub header">Per Month</div>
+                        </h3>
+                        <div class="ui attached segment">
+                            <button class="fluid ui button">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <h3 class="ui top inverted attached header">
+                    Pro Package
+                </h3>
+                <div class="ui attached segment citem">
+                    <div class="ui bulleted list">
+                        <div class="item">Access to Basic and Special lounges</div>
+                        <div class="item">Up to $25 of consumable coffee purchses</div>
+                        <div class="item">10% discount on all coffee purchases</div>
+                        <div class="item">15% discount on all merchandises</div>
+                        <div class="item">Early access to limited events and promotions</div>
+                    </div>
+                </div>
+                <div class="cprice">
+                    <div class="cprice_content">
+                        <h3 class="ui top attached header">
+                            $29
+                            <div class="sub header">Per Month</div>
+                        </h3>
+                        <div class="ui attached segment">
+                            <button class="fluid ui button">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <h3 class="ui top inverted attached header">
+                    Premium Package
+                </h3>
+                <div class="ui attached segment citem">
+                    <div class="ui bulleted list">
+                        <div class="item">Access to All lounges (VIP included)</div>
+                        <div class="item">Up to $35 of consumable coffee purchses</div>
+                        <div class="item">15% discount on all coffee purchases</div>
+                        <div class="item">20% discount on all merchandises</div>
+                        <div class="item">Early access to all events and promotions</div>
+                        <div class="item">Lounge reservation via text message, call, or online</div>
+                    </div>
+                </div>
+                <div class="cprice">
+                    <div class="cprice_content">
+                        <h3 class="ui top attached header">
+                            $39
+                            <div class="sub header">Per Month</div>
+                        </h3>
+                        <div class="ui attached segment">
+                            <button class="fluid ui button">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

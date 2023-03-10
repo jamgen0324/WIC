@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/plugins/Semantic-UI-CSS-master/semantic.min.css">
+    <link rel="stylesheet" href="/styles/StyleSheet1.css">
+    <script src="/plugins/Semantic-UI-CSS-master/semantic.min.js"></script>
+    <script src="/plugins/Semantic-UI-CSS-master/components/"></script>
+    <script src="/plugins/Semantic-UI-CSS-master/package.js"></script>
+    <title></title>
+</head>
+<body>
+    <div class="ui inverted segment" id="my_menu">
+        <div class="ui inverted secondary pointing menu">
+            <a class="item active" onclick="change_source('Home')">
+                Home
+            </a>
+            <a class="item" onclick="change_source('Products')">
+                Products
+            </a>
+            <a class="item" onclick="change_source('AboutUs')">
+                About Us
+            </a>
+            <a class="item" onclick="change_source('ContactUs')">
+                Contact Us
+            </a>
+            <a class="item" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSccoGzlw9AEgvoA85S-epRmlEPTI8SMP_Z7eh5uAMz5O5XVjw/viewform?usp=sf_link"> 
+                Survey
+            </a>
+        </div>
+    </div>
+    <div id="my_content">
+        <iframe src="Home.html" id="my_iframe" title="description"></iframe>
+    </div>
+</body>
+</html>
+<script>
+    // Add active class to the current button (highlight it)
+    var header = document.getElementById("my_menu");
+    var btns = header.getElementsByClassName("item");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+
+    function change_source(page){
+        document.getElementById("my_iframe").src = page + ".html";
+    }
+</script>
